@@ -30,3 +30,12 @@
     <svg width="500" height="250">
       <text x="250" y="25" font-family="serif" font-size="25" fill="gray">Some Text</text>
     </svg>
+
+#### Styling svg elements
++ fill    (the color that an element is filled with, can be rgb, hex, or predefined colors)
++ stroke  (outline of a shape, must be a color value)
++ stroke-width (width of a stroke, numerical typically in pixels)
++ opacity  (value is between 0.0(completely transparent) and 1.0(completely opaque))
++ font-family   (applies to text element only)
++ font-size     (applies to text element only)
+
