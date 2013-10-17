@@ -15,10 +15,9 @@
     array1 | array2  # => [1,2,3,4,5,6,7,8,9]
 
 #### defined?(variable)
-+ Ruby keyword that takes in a variable and returns a string of the kind of object, returns nil if the variable is not defined.
+Ruby keyword that takes in a variable and returns a string of the kind of object, returns nil if the variable is not defined.
 
     something = 3
-
     defined?(something)  # => "local-variable"
 
 #### File
