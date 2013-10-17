@@ -17,6 +17,10 @@
 #### defined?(variable)
 + Ruby keyword that takes in a variable and returns a string of the kind of object, returns nil if the variable is not defined.
 
+    something = 3
+
+    defined?(something)  # => "local-variable"
+
 #### File
 
 ###### File.size([file_name])
