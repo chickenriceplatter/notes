@@ -54,5 +54,17 @@ length will only count the numbered indexes in an array
 
 #### Functions
 
+###### Anonymous function (creating)
+
+    var sayName = function(name){
+        alert("Hi, " + name + "!");
+    }
+
+###### Named function (creating)
+
+    function isEven(number) {
+        return number % 2 === 0;
+    }
+
 
 
