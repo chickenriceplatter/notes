@@ -60,11 +60,14 @@ length will only count the numbered indexes in an array
         alert("Hi, " + name + "!");
     }
 
++ Anonymous functions are created in sequence of when the code is executed
+
 ###### Named function (creating)
 
     function isEven(number) {
         return number % 2 === 0;
     }
 
++ Named functions are created before any code is executed.
 
 
