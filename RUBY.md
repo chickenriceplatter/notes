@@ -51,6 +51,11 @@ This method returns the size of a file.
 
 #### String
 
+###### bytesize (returns number of bytes, this can be used for any object that has #to_s method)
+
+    > string = "string"
+    > string.bytesize  # => 6
+
 ###### substring (using range)
 
     > string = "string"

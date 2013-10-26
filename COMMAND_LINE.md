@@ -14,4 +14,9 @@
 - **Ctrl + q** – allow output to the screen (if previously stopped using command above)
 - **Ctrl + c** – terminate the command
 - **Ctrl + z** – suspend/stop the command
+- **!!** - run last command
+- **cd -** - goes back to the last directory
+- **mkdir -p** - creates both file and nested directory structure
+- **ls -thor** - shows when each file in the directory was last edited and who did the editing
 
+- afplay
