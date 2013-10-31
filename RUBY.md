@@ -27,6 +27,13 @@ This method returns the size of a file.
 
     File.size("file_name.md")  # => 56
 
+#### Hash
+
+###### fetch(:key, default_value)
+alternate way of getting a value from a hash, if the key does not exist, it returns the default value instead of nil
+
+    hash = { key1: 1, key2: 2}
+    hash.fetch(:key3, "something")  # => "something"
 
 #### Prime library
 ###### adds methods to Interger class
