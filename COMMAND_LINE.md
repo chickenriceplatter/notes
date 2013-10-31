@@ -20,3 +20,12 @@
 - **ls -thor** - shows when each file in the directory was last edited and who did the editing
 
 - afplay
+
+
+- **date** - shows the current date and time
+- **df** - shows amount of free space on disk drive
+- **free** - shows amount of free memory
+- **file** - determine file type
+- **more** - view file contents, can only page forward
+- **less** - view file contents, can page forward and backwards
+- **ls -l** - outputs long format
