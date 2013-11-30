@@ -112,7 +112,7 @@
 
 #### Tables (3 types)
 
-+ Permanent tables (i.e., created using the create table statement) 
++ Permanent tables (i.e., created using the create table statement)
 + Temporary tables (i.e., rows returned by a subquery)
 + Virtual tables (i.e., created using the create view statement)
 
@@ -173,4 +173,23 @@
 
     left
     right
-    
+
+#### Wildcards
+
+    _ - exactly one character
+    % - any number of characters (including 0)
+
+    LIKE F% - string beginning with 'F'
+    LIKE %g - string ending in 'g'
+    LIKE ___-__-____ - string with hyphen at index 3 and 6 (SS# format)
+
+#### NULL
+
++ An expression can be null, but it can never be equal to null.
++ Two nulls are never equal to each other.
+
+    SELECT * FROM employees WHERE termination_date IS NULL;
+
+####
+
+
