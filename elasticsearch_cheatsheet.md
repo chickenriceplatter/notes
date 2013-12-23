@@ -13,7 +13,7 @@ server.index(:index).type(:type).put(id, hash)
 ```
 
 ```bash
-curl -XPUT localhost:9200/index/type/id -d ' #{hash} '
+curl -XPUT localhost:9200/index/type/id -d ' { key: value } '
 ```
 
 #### Retrieve document
