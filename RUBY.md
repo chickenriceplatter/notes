@@ -76,4 +76,40 @@ alternate way of getting a value from a hash, if the key does not exist, it retu
 
 ###### String#intern (alias of String#to_sym)
     > string = "string"
-    > string.intern  # => :string 
+    > string.intern  # => :string
+
+
+----
+
+# Standard Library
+
+#### Benchmark
+
+#### CSV
+
+#### Fiber
+
+#### JSON
+
+    require 'json'
+
+    serialized = data.to_json
+
+    JSON.parse(serialized)
+
+#### mathn
+
+#### open-uri
+
+#### pathname
+
+#### pp
+
+#### prime
+
+    number = 50
+    number.prime?  # => false
+
+#### set
+
+#### YAML

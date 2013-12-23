@@ -58,3 +58,6 @@ Instructions: http://madebyhoundstooth.com/blog/install-mysql-on-mountain-lion-w
 
 #### SSH
 + https://help.github.com/articles/generating-ssh-keys
+
+#### ZSH
++ via wget or curl from https://github.com/robbyrussell/oh-my-zsh
