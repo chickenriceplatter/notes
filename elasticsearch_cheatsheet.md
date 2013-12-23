@@ -12,7 +12,7 @@ server = Stretcher::Server.new('http://localhost:9200')
 server.stats.indices.keys
 ```
 
-#### list all types types of an index
+#### list all types in an index
 
 ```ruby
 server.index(:index).stats.indices.keys
