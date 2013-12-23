@@ -26,6 +26,18 @@ server.index(:index).type(:type).get(id)
 curl -XGET localhost:9200/index/type/id
 ```
 
+#### Search for document
+
+```ruby
+server.index(:states).type(:state).search(query: {match: {key: value}})
+# => returns Stretcher::SearchResults object, call Stretcher::SearchResults#docs or Stretcher::SearchResults#documents method to get array of documents.
+```
+
+```bash
+curl -XGET localhost:9200/index/type/_search?q=key:value
+```
+
+
 #### list all indices
 
 ```ruby
