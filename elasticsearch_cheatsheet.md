@@ -39,7 +39,7 @@ curl -XDELETE "http://localhost:9200/index/type/id" -d''
 #### Search for document
 
 ```ruby
-server.index(:states).type(:state).search(query: {match: {key: value}})
+server.index(:index).type(:type).search(query: {match: {key: value}})
 # => returns Stretcher::SearchResults object, call Stretcher::SearchResults#docs or Stretcher::SearchResults#documents method to get array of documents.
 ```
 
@@ -52,10 +52,14 @@ curl -XGET "localhost:9200/index/type/_search?q=key:value"
 
 ```ruby
 server.stats.indices.keys
+OR
+server.aliases.keys
 ```
 
 #### list all types in an index
 
 ```ruby
-server.index(:index).stats.indices.keys
+server.index(:index).get_mapping # this will list types and document structure
+OR
+server.index(:index).get_mapping.send("#{server.index(:index).get_mapping.keys.first}").keys
 ```
