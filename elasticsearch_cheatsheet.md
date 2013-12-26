@@ -13,7 +13,7 @@ server.index(:index).type(:type).put(id, hash)
 ```
 
 ```bash
-curl -XPUT localhost:9200/index/type/id -d ' { key: value } '
+curl -XPUT "localhost:9200/index/type/id" -d ' { key: value } '
 ```
 
 #### Retrieve document
@@ -23,7 +23,16 @@ server.index(:index).type(:type).get(id)
 ```
 
 ```bash
-curl -XGET localhost:9200/index/type/id
+curl -XGET "localhost:9200/index/type/id"
+```
+
+#### Delete document
+
+```ruby
+```
+
+```bash
+curl -XDELETE "http://localhost:9200/index/type/id" -d''
 ```
 
 #### Search for document
@@ -34,7 +43,7 @@ server.index(:states).type(:state).search(query: {match: {key: value}})
 ```
 
 ```bash
-curl -XGET localhost:9200/index/type/_search?q=key:value
+curl -XGET "localhost:9200/index/type/_search?q=key:value"
 ```
 
 
