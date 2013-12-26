@@ -29,6 +29,7 @@ curl -XGET "localhost:9200/index/type/id"
 #### Delete document
 
 ```ruby
+server.index(:index).delete rescue nil
 ```
 
 ```bash
