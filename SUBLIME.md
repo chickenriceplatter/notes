@@ -12,4 +12,5 @@
 **Ctrl + cmd + g** - highlights all occurrences of selected text
 **option + cmd + .** - creates matching closing html tag
 **cmd + x** - deletes line that cursor is on
+**option + cmd + s** - saves all files
 
