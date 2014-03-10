@@ -61,3 +61,18 @@ Instructions: http://madebyhoundstooth.com/blog/install-mysql-on-mountain-lion-w
 
 #### ZSH
 + via wget or curl from https://github.com/robbyrussell/oh-my-zsh
+
+### iTerm2
++ http://www.iterm2.com
+
+### Sequel Pro
++ http://www.sequelpro.com/
+
+### Adium
++ https://adium.im/
+
+### Screenhero
++ http://screenhero.com/
+
+### nvalt
++ http://brettterpstra.com/projects/nvalt/
