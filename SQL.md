@@ -3,36 +3,36 @@
 #### Commonly used commands
 
 ######ADD COLUMN
-ALTER TABLE table_name ADD column_name column_type;
+    ALTER TABLE table_name ADD column_name column_type;
 
 ######DROP COLUMN
-ALTER TABLE table_name DROP column_name;
+    ALTER TABLE table_name DROP column_name;
 
 ######CHANGE COLUMN DATA TYPE
-ALTER TABLE table_name MODIFY COLUMN column_name column_type;
+    ALTER TABLE table_name MODIFY COLUMN column_name column_type;
 
-ALTER TABLE targets MODIFY COLUMN address_similarity FLOAT;
+    ALTER TABLE targets MODIFY COLUMN address_similarity FLOAT;
 
 ######CHANGE COLUMN ORDERING
-ALTER TABLE table_name MODIFY COLUMN column_name column_type AFTER another_column_name;
+    ALTER TABLE table_name MODIFY COLUMN column_name column_type AFTER another_column_name;
 
-ALTER TABLE targets MODIFY COLUMN address_similarity FLOAT AFTER matched_address;
+    ALTER TABLE targets MODIFY COLUMN address_similarity FLOAT AFTER matched_address;
 
 ######ADD INDEX TO TABLE
-ALTER TABLE table_name ADD INDEX index_name (column_name);
+    ALTER TABLE table_name ADD INDEX index_name (column_name);
 
 ######GET ALL TABLE SIZES IN A DATABASE
-SELECT table_name AS "Tables",
-round(((data_length + index_length) / 1024 / 1024), 2) "Size in MB"
-FROM information_schema.TABLES
-WHERE table_schema = "TABLE_NAME"
-ORDER BY (data_length + index_length) DESC;
+    SELECT table_name AS "Tables",
+    round(((data_length + index_length) / 1024 / 1024), 2) "Size in MB"
+    FROM information_schema.TABLES
+    WHERE table_schema = "TABLE_NAME"
+    ORDER BY (data_length + index_length) DESC;
 
 ######GET ALL DATABASE SIZES
-SELECT table_schema                                        "DB Name",
-   Round(Sum(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB"
-FROM   information_schema.tables
-GROUP  BY table_schema;
+    SELECT table_schema                                        "DB Name",
+    Round(Sum(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB"
+    FROM   information_schema.tables
+    GROUP  BY table_schema;
 
 #### mysql dumps
 
