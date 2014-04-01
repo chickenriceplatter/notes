@@ -1,5 +1,26 @@
 # Javascript Notes
 
+#### Numbers
+
+###### parseInt()
+
++ converts a string to an integer.
+
++ "NaN" is returned if string passed in is not numeric.
+
+###### parseFloat()
+
++ converts a string to a float.
+
+###### isNaN()
+
++ returns true if passed in NaN.
+
+###### isFinite()
+
++ returns true if passed in "Infinity", or "-Infinity".
+
+
 #### Array
 
 ###### create new array
@@ -12,7 +33,7 @@
     delete array[1]  # => [1,undefined,3]
 
 ###### length (returns array length)
-    
+
     var array = [1,2,3];
     array.length  # => 3
 
