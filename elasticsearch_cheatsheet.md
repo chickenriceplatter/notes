@@ -1,5 +1,9 @@
-# elasticsearch cheatsheet
+elasticsearch cheatsheet
+===
 
+
+stretcher
+---
 ### for all examples:
 
 ```ruby

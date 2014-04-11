@@ -24,6 +24,7 @@
 
 - afplay
 
+- **alias** - list all aliases defined
 - **date** - shows the current date and time
 - **df** - shows amount of free space on disk drive
 - **free** - shows amount of free memory
@@ -51,3 +52,25 @@
 - [:digit:] - matches any numeric character
 - [:lower:] - matches any lowercase character
 - [:upper:] - matches any uppercase character
+
+search for files
+---
+
+#### grep
+
+    $ grep -flags pattern [file(s)]
+
+    $ grep -ic ruby *
+
+| Option | Description                                        |
+|--------|----------------------------------------------------|
+| -An    | Show n lines after matching the line.              |
+| -Bn    | Show n lines before matching the line.             |
+| -Cn    | Show n lines before and after matching the line.   |
+| -v     | Print only lines that do not match the pattern.    |
+| -n     | Print the matched line and its line number.        |
+| -l     | Print only the names of files with matching lines. |
+| -c     | Print only the count of matching lines.            |
+| -i     | Match either upper- or lowercase.                  |
+
+
