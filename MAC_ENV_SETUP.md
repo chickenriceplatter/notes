@@ -23,19 +23,36 @@
 + click install Command Line Tools
 
 #### HOMEBREW
-+ Type this in command line: ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-+ brew doctor
-+ brew update
-+ Instructions are here: http://mxcl.github.io/homebrew/
+- [x] http://brew.sh/
++ Type this in command line:
+```bash
+$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+```
 
 #### WGET
-+ brew install wget
+```bash
+$ brew install wget
+```
 
 #### RVM & RUBY
 + http://octopress.org/docs/setup/rvm/
 
+#### PYTHON(2.X) & VIRTUALENV
+```bash
+$ brew install python
+$ pip install virtualenv
+$ cd [into folder where you will be keeping python env data]
+$ virtualenv venv
+$ source venv/bin/activate
+$ deactivate
+$ pip install ipython
+```
++ http://docs.python-guide.org/en/latest/starting/install/osx/
+
 #### MYSQL
-+ brew install mysql
+```bash
+brew install mysql
+```
 
 1. check if there exists ~/Library/LaunchAgents, if not type this in command line: mkdir -p ~/Library/LaunchAgents
 
