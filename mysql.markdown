@@ -34,3 +34,7 @@ mysql notes
 ### show current user
 
     $ select current_user();
+
+### show data store location
+
+    mysql> show variables where Variable_name ='datadir';
