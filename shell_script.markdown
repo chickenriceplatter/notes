@@ -37,3 +37,34 @@ shell
 #### write ouput to file (append to existing file's content)
 
     $ command >> file_name
+
+#### split a file into n files
+```bash
+$ split -l <number_of_lines> <file_name> <new_files_prefix>
+$ split -l 15 number.txt apart
+```
+
+#### create a new file from the first n lines of a file
+```bash
+$ head -<number_of_lines> <file_name> > <new_file_name>
+$ head -100 somefile.txt > newfile.txt
+```
+
+#### translate (tr)
+```bash
+$ echo 'a,b,c' | tr ',' '-' # => a-b-c
+$ echo '12345678987654321' | tr '123456789' 'abcdefghi' # => abcdefghihgfedcba
+```
+
+#### deletion using tr
+```bash
+$ echo 'a,b,c,d,e,f,g' | tr -d ',' # => abcdefg
+```
+
+#### cut
+- -c for characters
+- -b for bytes
+- -f for fields
+```bash
+
+
