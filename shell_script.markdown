@@ -66,5 +66,7 @@ $ echo 'a,b,c,d,e,f,g' | tr -d ',' # => abcdefg
 - -b for bytes
 - -f for fields
 ```bash
+$ cut -d [delimiter] -f [field_index] file_name > new_file_name
+```
 
 

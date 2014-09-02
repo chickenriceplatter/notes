@@ -95,3 +95,9 @@ Instructions: http://madebyhoundstooth.com/blog/install-mysql-on-mountain-lion-w
 
 ### nvalt
 + http://brettterpstra.com/projects/nvalt/
+
+#### spectacleapp (window resizer)
++ http://spectacleapp.com/
+
+#### 1password
++ https://agilebits.com/onepassword/mac
