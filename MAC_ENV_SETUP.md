@@ -99,5 +99,9 @@ Instructions: http://madebyhoundstooth.com/blog/install-mysql-on-mountain-lion-w
 #### spectacleapp (window resizer)
 + http://spectacleapp.com/
 
+#### bettertouchtools (window resizer)
++ http://www.macupdate.com/app/mac/32953/bettertouchtool
++ http://www.boastr.net/
+
 #### 1password
 + https://agilebits.com/onepassword/mac
