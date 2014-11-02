@@ -74,6 +74,12 @@ Instructions: http://madebyhoundstooth.com/blog/install-mysql-on-mountain-lion-w
 
 #### POSTGRES
 + download from http://postgresapp.com/ and move app to application folder
++ for pg gem install on mavericks
+
+    ```bash
+    $ gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/9.3/bin/pg_config
+    $ gem install pg -v '0.14.1' -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/9.3/bin/pg_config
+    ```
 
 #### SSH
 + https://help.github.com/articles/generating-ssh-keys
