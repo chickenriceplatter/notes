@@ -39,3 +39,26 @@ class [ModelName] < ActiveRecord::Base
   self.table_name = "[EXACT_TABLE_NAME_AS_IT_CURRENTLY_IS]"
 end
 ```
+
+database.yml
+---
+
+### mysql
+
+```yaml
+common: &common
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *common
+  database: project_name_development
+
+test:
+  <<: *common
+  database: project_name_test
+```

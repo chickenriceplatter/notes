@@ -1,6 +1,12 @@
 shell
 ---
 
+#### change ownership for folder and all subfolders
+
+```bash
+$ sudo chown -R owner_name <directory>
+```
+
 #### show shells installed
     $ cat /etc/shells
 
