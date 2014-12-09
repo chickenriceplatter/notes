@@ -40,6 +40,11 @@ class [ModelName] < ActiveRecord::Base
 end
 ```
 
+Arel
+---
+http://blog.bigbinary.com/2013/07/01/preload-vs-eager-load-vs-joins-vs-includes.html
+
+
 database.yml
 ---
 

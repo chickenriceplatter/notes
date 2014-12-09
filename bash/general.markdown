@@ -1,6 +1,20 @@
 shell
 ---
 
+#### make shell script executable
+```bash
+chmod 555 file_name
+```
+
+##### numerical operations
+
+- wrap experssion in double parentheses (())
+
+comparison operations
+
+- wrap experssion in double square brackets [[]]
+
+
 #### change ownership for folder and all subfolders
 
 ```bash
