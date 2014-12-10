@@ -64,6 +64,14 @@ $ split -l <number_of_lines> <file_name> <new_files_prefix>
 $ split -l 15 number.txt apart
 ```
 
+#### loop through files in current folder
+```bash
+$ for file in *
+    do
+        mv "$file" "$file.txt"
+    done
+```
+
 #### create a new file from the first n lines of a file
 ```bash
 $ head -<number_of_lines> <file_name> > <new_file_name>
