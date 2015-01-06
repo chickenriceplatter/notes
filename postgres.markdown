@@ -67,6 +67,22 @@ test:
 
 **\<database_name\> should be substituted with your corresponding database names**
 
+### data types
+
+| Data Type        | Description                                                |
+|------------------|------------------------------------------------------------|
+| SMALLINT         | signed two-byte integer                                    |
+| INTEGER          | signed four-byte integer                                   |
+| BIGINT           | signed eight-byte integer                                  |
+| DECIMAL          | exact numeric of selectable precision                      |
+| REAL             | single precision floating-point number                     |
+| DOUBLE PRECISION | double precision floating-point number                     |
+| BOOLEAN          | logical boolean (true/false)                               |
+| CHAR             | fixed-length character string                              |
+| VARCHAR          | variable-length character string with a user-defined limit |
+| DATE             | calendar date (year, month, day)                           |
+| TIMESTAMP        | date and time (without time zone)                          |
+
 
 ### postgres commands
 
@@ -77,5 +93,28 @@ test:
 | use [database_name] | \c [database_name] |
 | show tables;        | \d                 |
 | desc [table_name]   | \d+ [table_name]   |
+
+### create table
+```sql
+CREATE TABLE table_name(
+   column1 datatype,
+   column2 datatype,
+   column3 datatype,
+   .....
+   columnN datatype,
+   PRIMARY KEY( one or more columns )
+);
+```
+
+### insert data into table
+```sql
+INSERT INTO TABLE_NAME (column1, column2, column3,...columnN)]
+VALUES (value1, value2, value3,...valueN);
+```
+
+### delete row from table
+```sql
+DELETE FROM TABLE_NAME WHERE columnN = valueN;
+```
 
 
