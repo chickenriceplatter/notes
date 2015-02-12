@@ -10,19 +10,31 @@
 + account name: choose account name
 + password: choose password
 
-#### Sublime Text Editor
-+ download from sublime text, move to applications folder
-+ To use subl command in bash, do not symlink, add the following lines to you .bash_profile and reload bash.
+#### sublime text 2
+- [ ] http://www.sublimetext.com/2
+- [ ] install sublime package control: https://sublime.wbond.net/installation#st2
+- [ ] To use 'subl' command in bash, do not symlink, add the following lines to your .bash_profile and reload bash.  Add to .zshrc for zsh.
+```bash
+alias subl="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'"
+export EDITOR="subl"
+```
 
-    alias subl="'/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl'"
-    export EDITOR="subl"
+#### setup SSH
++ https://help.github.com/articles/generating-ssh-keys
 
 #### XCODE & COMMAND LINE TOOLS
 + Install Xcode from Apple App Store
-+ Once installed, open Xcode, go to: Xcode > Preferences... > Downloads > Components (tab)
-+ click install Command Line Tools
++ go to terminal and type in ```xcode-select --install``` to install command line tools.
++ full instructions for command line tools install: https://www.computersnyou.com/2025/install-command-line-tools-in-osx-10-9-mavericks-how-to/
 
-#### HOMEBREW
+### install iTerm2
++ http://www.iterm2.com
+
+#### install bettertouchtools (window resizer)
++ http://www.macupdate.com/app/mac/32953/bettertouchtool
++ http://www.boastr.net/
+
+#### install HOMEBREW
 - [x] http://brew.sh/
 + Type this in command line:
 ```bash
@@ -31,13 +43,23 @@ $ brew doctor
 $ brew update
 ```
 
-#### WGET
+#### mysql
+- [ ] type the following in command line
 ```bash
-$ brew install wget
+$ brew install mysql
 ```
+- [ ] follow instructions printed at the end of the brew install to get '$ mysql -uroot' to work
 
 #### RVM & RUBY
 + http://octopress.org/docs/setup/rvm/
++ replace ```1.9.3``` with whichever version of ruby you want to install.
+
+### Sequel Pro
++ http://www.sequelpro.com/
+
+
+optional installs
+---
 
 #### PYTHON(2.X) & VIRTUALENV
 ```bash
@@ -51,47 +73,8 @@ $ pip install ipython
 ```
 + http://docs.python-guide.org/en/latest/starting/install/osx/
 
-#### MYSQL
-```bash
-brew install mysql
-```
-
-1. check if there exists ~/Library/LaunchAgents, if not type this in command line: mkdir -p ~/Library/LaunchAgents
-
-2. go /usr/local/Cellar/mysql and ls to find version number -- my_sql_version_number
-
-3. cp /usr/local/Cellar/mysql/[my_sql_version_number]/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
-
-4. launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
-
-5. unset TMPDIR
-
-6. (maybe optional) mysql_install_db --verbose --user=[whoami]--basedir=[$(brew --prefix mysql)]--datadir=/usr/local/var/mysql --tmpdir=/tmp
-
-7. (optional) /usr/local/Cellar/mysql/[my_sql_version_number]/bin/mysqladmin -u root password [password in quotation marks]
-
-Instructions: http://madebyhoundstooth.com/blog/install-mysql-on-mountain-lion-with-homebrew/
-
-#### POSTGRES
-+ download from http://postgresapp.com/ and move app to application folder
-+ for pg gem install on mavericks
-
-    ```bash
-    $ gem install pg -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/9.3/bin/pg_config
-    $ gem install pg -v '0.14.1' -- --with-pg-config=/Applications/Postgres.app/Contents/Versions/9.3/bin/pg_config
-    ```
-
-#### SSH
-+ https://help.github.com/articles/generating-ssh-keys
-
 #### ZSH
 + via wget or curl from https://github.com/robbyrussell/oh-my-zsh
-
-### iTerm2
-+ http://www.iterm2.com
-
-### Sequel Pro
-+ http://www.sequelpro.com/
 
 ### Adium
 + https://adium.im/
@@ -104,10 +87,6 @@ Instructions: http://madebyhoundstooth.com/blog/install-mysql-on-mountain-lion-w
 
 #### spectacleapp (window resizer)
 + http://spectacleapp.com/
-
-#### bettertouchtools (window resizer)
-+ http://www.macupdate.com/app/mac/32953/bettertouchtool
-+ http://www.boastr.net/
 
 #### 1password
 + https://agilebits.com/onepassword/mac
