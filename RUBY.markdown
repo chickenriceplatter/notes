@@ -79,13 +79,25 @@ alternate way of getting a value from a hash, if the key does not exist, it retu
     > string.intern  # => :string
 
 
-----
+===
 
-# Standard Library
+Standard Library
+---
 
 #### Benchmark
 
-#### CSV
+#CSV
+- convert nonquoted csv into quoted csv
+```ruby
+CSV.open("csv_WITH_quotes.csv", "wb", :quote_char=>'"', :force_quotes => true) do |csv|
+  CSV.foreach("csv_WITHOUT_quotes.csv") do |row|
+    csv << row
+  end
+end
+```
+
+
+
 
 #### Fiber
 

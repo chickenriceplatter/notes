@@ -1,6 +1,11 @@
 Postgres
 ---
 
+### show all users
+```bash
+\du
+```
+
 ### Install
 
 - download from http://postgresapp.com/, follow instructions on the site.
