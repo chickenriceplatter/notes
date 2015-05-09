@@ -5,14 +5,12 @@ Using ActiveRecord on a Table
 ---
 
 ```ruby
-ActiveRecord::Base.establish_connection
-(
+ActiveRecord::Base.establish_connection(
   :adapter => "mysql2",
   :database => "[database_name_in_quotes]"
 )
-end
 
-Class [TableNameInCamelCaseSingular] < ActiveRecord::Base
+class [TableNameInCamelCaseSingular] < ActiveRecord::Base
 end
 ```
 
