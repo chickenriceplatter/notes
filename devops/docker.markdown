@@ -1,6 +1,42 @@
 docker
 ===
 
+boot2docker commands
+---
+```bash
+boot2docker up # starts vm
+boot2docker down # stops vm
+boot2docker status # shows vm status
+```
+
+docker commands
+---
+
+### show logs
+```bash
+docker log [container_id]
+```
+
+### stop container
+```bash
+docker stop [container_name]
+```
+
+### show docker version
+```bash
+docker version
+```
+
+### build image
+```bash
+docker build -t [name/tag] .
+```
+
+### expose port when running a container
+```bash
+docker run -it -p [host port number]:[container port number] [name/tag] /bin/bash
+```
+
 run command
 ---
 ```bash
@@ -8,12 +44,16 @@ docker run [args] image:tag [command] [args]
 docker run -it busybox sh/
 ```
 
-boot2docker commands
+start a stopped container
 ---
 ```bash
-boot2docker up # starts vm
-boot2docker down # stops vm
-boot2docker status # shows vm status
+docker start [container_id|container_name]
+```
+
+launch shell of a running container
+---
+```bash
+docker exec -it [container_id] /bin/bash
 ```
 
 docker image commands

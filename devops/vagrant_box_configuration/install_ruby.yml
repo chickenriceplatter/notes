@@ -1,0 +1,11 @@
+---
+- hosts: deploy
+  sudo: false
+  tasks:
+   - shell: 'echo "gem: --no-rdoc --no-ri" > ~/.gemrc'
+   - shell: curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+   - shell: curl -L https://get.rvm.io | bash -s stable --ruby
+   - shell: 'echo "export RAILS_ENV=production" >> ~/.bashrc'
+   - shell: 'echo "export SECRET_KEY_BASE=7651f3a2837d30bcef2885a4e4b619c73132d7600197d613b225f54c75af24081276d921c2ce0b8ef6e04aa0cdd38bfddb1f74c6c6b7f0ebb46db043cead8479" >> ~/.bashrc'
+   - shell: 'echo "export RAILS_SERVE_STATIC_FILES=1" >> ~/.bashrc'
+   - command: gem install bundler

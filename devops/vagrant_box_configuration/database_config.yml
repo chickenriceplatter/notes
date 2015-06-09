@@ -1,0 +1,6 @@
+---
+- hosts: deploy
+  sudo: false
+  gather_facts: no
+  tasks:
+  - copy: src=database.yml dest=/data/dummy/shared/config/database.yml

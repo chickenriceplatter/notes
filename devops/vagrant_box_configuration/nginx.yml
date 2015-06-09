@@ -1,0 +1,18 @@
+---
+- hosts: deploy
+  sudo: true
+  gather_facts: no
+  tasks:
+  - copy: src=nginx.conf dest=/etc/nginx/nginx.conf
+  - command: mkdir /etc/nginx/sites-enabled/
+  - copy: src=default dest=/etc/nginx/sites-enabled/default
+  - command: service nginx start
+  - command: mkdir -p "/var/run/deploy"
+  - command: chown -R deploy "/var/run/deploy"
+  - command: mkdir -p "/data/dummy/"
+  - command: mkdir -p "/data/dummy/releases"
+  - command: mkdir -p "/data/dummy/shared"
+  - command: mkdir -p "/data/dummy/shared/config"
+  - command: mkdir -p "/data/dummy/shared/log"
+  - command: touch "/data/dummy/shared/config/database.yml"
+  - command: chown -R deploy "/data/dummy/"

@@ -1,6 +1,12 @@
 Rails
 ===
 
+new project (not test suite, postgresql)
+---
+```bash
+$ rails new <app_name> -T --database=postgresql
+```
+
 Using ActiveRecord on a Table
 ---
 

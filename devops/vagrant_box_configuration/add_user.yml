@@ -1,0 +1,17 @@
+---
+- hosts: local
+  sudo: false
+  tasks:
+  - name: create deploy user
+    user: name=deploy
+          state=present
+          group=wheel
+
+  - lineinfile: dest=/etc/sudoers state=present insertafter="gibberish" line="deploy ALL=(ALL) NOPASSWD:ALL"
+  - command: sudo -u deploy mkdir /home/deploy/.ssh
+  - command: cp /root/.ssh/authorized_keys /home/deploy/.ssh/authorized_keys
+  - copy: src=known_hosts dest=/home/deploy/.ssh/known_hosts
+  - copy: src=//Users/dave/.ssh/id_rsa dest=/home/deploy/.ssh/id_rsa
+  - command: chmod 600 /home/deploy/.ssh/id_rsa
+  - command: chown -R deploy /home/deploy/.ssh
+

@@ -1,0 +1,85 @@
+---
+- hosts: deploy
+  sudo: true
+  tasks:
+   - name: upgrade all packages
+     yum: name=* state=latest
+   - name: install gcc-c++
+     yum: name=gcc-c++ state=present
+   - name: install git
+     yum: name=git state=present
+   - name: install nano
+     yum: name=nano state=present
+   - name: install patch
+     yum: name=patch state=present
+   - name: install readline
+     yum: name=readline state=present
+   - name: install readline-devel
+     yum: name=readline-devel state=present
+   - name: install zlib
+     yum: name=zlib state=present
+   - name: install zlib-devel
+     yum: name=zlib-devel state=present
+   - name: install libyaml-devel
+     yum: name=libyaml-devel state=present
+   - name: install libffi-devel
+     yum: name=libffi-devel state=present
+   - name: install openssl-devel
+     yum: name=openssl-devel state=present
+   - name: install make
+     yum: name=make state=present
+   - name: install bzip2
+     yum: name=bzip2 state=present
+   - name: install autoconf
+     yum: name=autoconf state=present
+   - name: install automake
+     yum: name=automake state=present
+   - name: install libtool
+     yum: name=libtool state=present
+   - name: install bison
+     yum: name=bison state=present
+   - name: install curl
+     yum: name=curl state=present
+   - name: install rubygems
+     yum: name=rubygems state=present
+   - name: install epel-release
+     yum: name=epel-release state=present
+   - name: install nodejs
+     yum: name=nodejs state=present
+   - name: install nginx
+     yum: name=nginx state=present
+
+   - name: install postgresql
+     yum: name=postgresql state=present
+   - name: install postgresql-libs
+     yum: name=postgresql-libs state=present
+   - name: install postgresql-plperl
+     yum: name=postgresql-plperl state=present
+   - name: install postgresql-plpython
+     yum: name=postgresql-plpython state=present
+   - name: install postgresql-server
+     yum: name=postgresql-server state=present
+   - name: install postgresql-devel
+     yum: name=postgresql-devel state=present
+   - name: install python-pip
+     yum: name=python-pip state=present
+   - name: install python-devel.x86_64
+     yum: name=python-devel.x86_64 state=present
+
+   - command: pip install psycopg2
+   - command: postgresql-setup initdb
+   - command: chkconfig postgresql on
+   - command: service postgresql start
+   - command: service postgresql restart
+
+   - name: create deploy user
+     sudo: yes
+     sudo_user: postgres
+     postgresql_user: name=deploy password=password role_attr_flags=CREATEDB
+
+   - name: Create postgres database
+     sudo: yes
+     sudo_user: postgres
+     postgresql_db:
+       name: dummy
+       owner: deploy

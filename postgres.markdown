@@ -1,6 +1,16 @@
 Postgres
 ---
 
+### create user
+```bash
+CREATE USER [user-name] WITH PASSWORD [password]; # names containing '-' must be quoted by double quotes
+```
+
+### change owner of database
+```bash
+ALTER DATABASE [database_name] OWNER TO [user-name];
+```
+
 ### show all users
 ```bash
 \du
