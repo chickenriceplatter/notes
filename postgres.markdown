@@ -132,4 +132,8 @@ VALUES (value1, value2, value3,...valueN);
 DELETE FROM TABLE_NAME WHERE columnN = valueN;
 ```
 
+### run sql file against specific database
+```bash
+$ psql -d [database_name] -a -f sequel_file.sql
+```
 
