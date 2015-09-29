@@ -31,6 +31,20 @@ $ rm -rf /usr/local/Cellar/neo4j/2.2.5/libexec/data/graph.db
 $ neo4j start
 ```
 
+export database to cypher file
+--
+```bash
+$ neo4j-shell -c dump > [file_name].cypher
+```
+
+load cypher file
+---
+```bash
+$ neo4j-shell -c < [file_name].cypher
+or
+$ neo4j-shell -file [file_name].cypher
+```
+
 cypher
 ===
 [] square brackets denote substituting with actual values (remove the square brackets when you substitute)
