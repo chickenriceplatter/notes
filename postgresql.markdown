@@ -1,4 +1,4 @@
-Postgres
+Postgresql
 ---
 
 ### create user
@@ -101,13 +101,14 @@ test:
 
 ### postgres commands
 
-| mysql               | postgres           |
-|---------------------|--------------------|
-| show databases;     | \l                 |
-| exit                | \q                 |
-| use [database_name] | \c [database_name] |
-| show tables;        | \d                 |
-| desc [table_name]   | \d+ [table_name]   |
+| mysql               | postgres slash command  | long command |
+|---------------------|-------------------------|--------------|
+| show databases;     | \l                      | SELECT datname FROM pg_database;
+| exit                | \q                      |
+| use [database_name] | \c [database_name]      | The command to switch database does not exist in postgresql, the \c command kills the current connections and establishes a new connection.
+| show tables;        | \d                      | SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+| show columns;       | \d [table_name]         | SELECT column_name FROM information_schema.columns WHERE table_name ='table';
+| desc [table_name]   | \d+ [table_name]        | SELECT column_name FROM information_schema.columns WHERE table_name ='table';
 
 ### create table
 ```sql
@@ -137,3 +138,20 @@ DELETE FROM TABLE_NAME WHERE columnN = valueN;
 $ psql -d [database_name] -a -f sequel_file.sql
 ```
 
+### show databases size
+```sql
+select t1.datname AS db_name,
+       pg_size_pretty(pg_database_size(t1.datname)) as db_size
+from pg_database t1
+order by pg_database_size(t1.datname) desc;
+```
+
+### export table as csv with header
+```sql
+COPY table_name TO '/path/to/file_name.csv' DELIMITER ',' CSV HEADER;
+```
+
+#### import csv to table with header
+```sql
+COPY table_name FROM '/path/to/file_name.csv' DELIMITER ',' CSV HEADER;
+```
