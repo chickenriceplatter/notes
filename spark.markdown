@@ -84,11 +84,20 @@ pandas_df = pd.DataFrame.from_records(spark_dataframe.collect(), columns=spark_d
 ```
 
 pandas dataframe write to disk as csv
+---
 ```python
 header = ["custom","list","of","header"]
 
 df.to_csv('output.csv', columns = header)
 ```
 
+spark read table from postgresql
+---
+```bash
+$ IPYTHON=1 ./bin/pyspark --conf spark.executor.extraClassPath=/path/to/postgresql-9.4.1207.jar --driver-class-path /path/to/postgresql-9.4.1207.jar --jars /path/to/postgresql-9.4.1207.jar
+```
 
+```python
+df = sqlContext.read.format('jdbc').options(url='jdbc:postgresql://localhost:5432/[database_name]?user=[username]&password=[password]', dbtable='[table_name]').load()
+```
 
