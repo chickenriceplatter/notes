@@ -4,25 +4,31 @@ apache spark
 start shell
 ---
 ```bash
-./bin/pyspark
+$ ./bin/pyspark
 ```
 
 start IPython shell
 ---
 ```bash
-IPYTHON=1 ./bin/pyspark
+$ IPYTHON=1 ./bin/pyspark
 ```
 
 run a python script
 ---
 ```bash
-./bin/spark-submit my_script.py
+$ ./bin/spark-submit my_script.py
+```
+
+run a script within pyspark shell
+---
+```bash
+>>> %run path/to/script.py
 ```
 
 create SparkContext
 ---
 ```python
-rom pyspark import SparkConf, SparkContext
+from pyspark import SparkConf, SparkContext
 
 conf = SparkConf().setMaster("local").setAppName("My App")
 sc = SparkContext(conf = conf)
@@ -63,6 +69,31 @@ write to file
 ---
 ```python
 result.saveAsTextFile(outputFile)
+```
+
+create dataframe from rdd
+---
+```python
+from pyspark.sql import SQLContext
+from pyspark.sql.types import *
+
+array = [["apple","fruit",0.75],["brie","dairy",5.50],["broccoli","vegetable",0.99]]
+
+rdd = sc.parallelize(array)
+
+fields = [StructField("food", StringType(), True), StructField("category", StringType(), True), StructField("price", FloatType(), True)]
+
+schema = StructType(fields)
+
+df = sqlContext.createDataFrame(rdd, schema)
+```
+
+save dataframe to database
+---
+```python
+url = "jdbc:postgresql://localhost:5432/foobar?user=foo&password=bar" // omit '&password=bar' if there is no password
+
+df.write.jdbc(url=url, table="[table_name]", mode="overwrite")
 ```
 
 reading csv as dataframe
