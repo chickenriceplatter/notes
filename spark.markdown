@@ -101,9 +101,21 @@ reading csv as dataframe
 ```bash
 $ IPYTHON=1 ./bin/pyspark --packages com.databricks:spark-csv_2.11:1.3.0
 ```
-
 ```python
 df = sqlContext.read.format('com.databricks.spark.csv').options(header='true', inferschema='true').load('file_name.csv')
+```
+
+write dataframe to csv
+---
+```python
+df.coalesce(1).write.format("com.databricks.spark.csv").option("header", "true").save("path/to/file.csv")
+```
+
+filter dataframe by column value
+```python
+from pyspark.sql.functions import col
+
+new_df = df.where(col("v").isin({"foo", "bar"}))
 ```
 
 convert spark dataframe to pandas dataframe
@@ -130,5 +142,11 @@ $ IPYTHON=1 ./bin/pyspark --conf spark.executor.extraClassPath=/path/to/postgres
 
 ```python
 df = sqlContext.read.format('jdbc').options(url='jdbc:postgresql://localhost:5432/[database_name]?user=[username]&password=[password]', dbtable='[table_name]').load()
+```
+
+calculate average of column in dataframe
+---
+```python
+df.groupBy().avg('[column_name]').collect()
 ```
 
