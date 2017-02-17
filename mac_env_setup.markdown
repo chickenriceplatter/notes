@@ -48,11 +48,26 @@ $ brew update
 ```bash
 $ brew install mysql
 ```
-- [ ] follow instructions printed at the end of the brew install to get '$ mysql -uroot' to work
+- [ ] To have launchd start mysql now and restart at login:
+```bash
+$ brew services start mysql
+```
+
+- [ ] To manually start/stop mysql server
+```bash
+$ mysql.server start
+$ mysql.server stop
+```
 
 #### RVM & RUBY
-+ http://octopress.org/docs/setup/rvm/
-+ replace ```1.9.3``` with whichever version of ruby you want to install.
+- `$ brew install gnupg`
+- `$ brew install openssl`
+- `$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`
+- `$ \curl -sSL https://get.rvm.io | bash -s stable`
+- `$ rvm reinstall 2.3.0 --with-openssl-dir=/usr/local/opt/openssl`
+
++ <s>http://octopress.org/docs/setup/rvm/</s>
++ <s>replace ```1.9.3``` with whichever version of ruby you want to install.</s>
 
 ### Sequel Pro
 + http://www.sequelpro.com/
