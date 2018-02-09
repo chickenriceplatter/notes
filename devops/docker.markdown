@@ -135,3 +135,28 @@ mounting volume
 docker run -it -v host_directory:container_directory
 docker run -it -v /Users/dave/some_folder:/some_folder
 ```
+
+Install on Arch
+===
+```
+$ sudo pacman -S docker
+```
+
+start docker daemon on boot
+---
+```
+$ sudo systemctl enable docker
+```
+
+stop docker daemon from starting on boot
+---
+```
+$ sudo systemctl disable docker
+```
+
+manage docker as non-root user
+---
+```
+$ sudo groupadd docker
+$ sudo usermod -aG docker $USER
+```
