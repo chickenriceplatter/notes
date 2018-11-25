@@ -1,6 +1,17 @@
 Postgresql
 ---
 
+### install on arch linux
+```bash
+$ sudo pacman -Syu
+$ sudo pacman -S postgresql
+$ sudo su postgres
+[postgres]$ initdb --locale en_US.UTF-8 -D '/var/lib/postgres/data'
+[postgres]$ exit
+$ sudo systemctl start postgresql
+$ sudo systemctl stop postgresql
+```
+
 ### create user
 ```bash
 CREATE USER [user-name] WITH PASSWORD [password]; # names containing '-' must be quoted by double quotes
@@ -16,7 +27,7 @@ ALTER DATABASE [database_name] OWNER TO [user-name];
 \du
 ```
 
-### Install
+### Install on mac
 
 - download from http://postgresapp.com/, follow instructions on the site.
 
