@@ -1,7 +1,7 @@
-mysql notes
+mysql 笔记
 ---
 
-### select * and export as csv
+### select * and export as csv ( select * 和 导出csv文件 )
 ```sql
 SELECT *
 FROM <table_name>
@@ -11,7 +11,7 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\n';
 ```
 
-### print out table size in mb
+### print out table size in mb ( 打印表的大小 mb 单位 )
 ```sql
 SELECT table_name AS "Table",
 round(((data_length + index_length) / 1024 / 1024), 2) "Size in MB"
