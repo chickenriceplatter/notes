@@ -1,4 +1,6 @@
-Type: Enterprise Install - Create New BI System
+Type: Enterprise Install - Create New BI Syste
+===
+
 	Installation Details
 		Middleware Home: /data/obiee
 		BI Oracle Home: /data/obiee/Oracle_BI1
